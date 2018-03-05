@@ -3,10 +3,10 @@ const express = require('express');
 const app = express()
 
 
-
+app.use('/', express.static(__dirname + '/front-heroku/build'));
 
 app.get('*', (req, res) => {
-  res.send('hello CPROA');
+  res.sendFile(__dirname + '/front-heroku/build/index.html');
 })
 
 
